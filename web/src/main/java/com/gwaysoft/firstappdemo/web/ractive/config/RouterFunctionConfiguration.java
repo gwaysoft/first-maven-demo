@@ -38,12 +38,12 @@ public class RouterFunctionConfiguration {
         RouterFunction<ServerResponse> route = RouterFunctions.route()
                 .GET("/user/find/all", accept(MediaType.APPLICATION_JSON_UTF8),
                         serverRequest -> {
-                            Collection<User> users = userRepository.findAll();
+                            Iterable<User> users = userRepository.findAll();
                             Flux<User> userFlux = Flux.fromIterable(users);
                             return ServerResponse.ok().body(userFlux, User.class);
                         }).GET("/user/find/all01", accept(MediaType.APPLICATION_JSON_UTF8),
                         serverRequest -> {
-                            Collection<User> users = userRepository.findAll();
+                            Iterable<User> users = userRepository.findAll();
                             Flux<User> userFlux = Flux.fromIterable(users);
                             return ServerResponse.ok().body(userFlux, User.class);
                         }).build();

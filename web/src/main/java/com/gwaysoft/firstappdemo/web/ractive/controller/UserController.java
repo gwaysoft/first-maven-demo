@@ -29,7 +29,7 @@ public class UserController {
     }
 
     @PostMapping("/user/findAll")
-    public Collection<User> findAll(){
+    public Iterable<User> findAll(){
         return userRepository.findAll();
     }
 }
