@@ -23,7 +23,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.gwaysoft.firstappdemo.FirstAppDemoApplication</mainClass>
+                    <mainClass>com.gwaysoft.firstappdemo.web.ractive.FirstAppDemoApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

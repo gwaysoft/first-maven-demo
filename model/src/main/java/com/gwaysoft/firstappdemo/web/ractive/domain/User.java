@@ -1,4 +1,4 @@
-package com.gwaysoft.firstappdemo.domain;
+package com.gwaysoft.firstappdemo.web.ractive.domain;
 
 public class User {
 

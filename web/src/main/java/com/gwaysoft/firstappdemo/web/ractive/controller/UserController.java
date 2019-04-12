@@ -1,7 +1,7 @@
-package com.gwaysoft.firstappdemo.controller;
+package com.gwaysoft.firstappdemo.web.ractive.controller;
 
-import com.gwaysoft.firstappdemo.domain.User;
-import com.gwaysoft.firstappdemo.repository.UserRepository;
+import com.gwaysoft.firstappdemo.web.ractive.domain.User;
+import com.gwaysoft.firstappdemo.web.ractive.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

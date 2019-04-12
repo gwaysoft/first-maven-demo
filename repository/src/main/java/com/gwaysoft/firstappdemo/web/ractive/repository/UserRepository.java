@@ -1,6 +1,6 @@
-package com.gwaysoft.firstappdemo.repository;
+package com.gwaysoft.firstappdemo.web.ractive.repository;
 
-import com.gwaysoft.firstappdemo.domain.User;
+import com.gwaysoft.firstappdemo.web.ractive.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
