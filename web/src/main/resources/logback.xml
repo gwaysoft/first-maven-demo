@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- appender 的配置表示打印到控制台。 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoder 默认配置为 PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <File>target/test.log</File>
+        <!-- encoders are assigned the type
+            ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <Pattern> %d {HH:mm:ss.SSS} %-5level %class{36}:%L %M - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.gwaysoft" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

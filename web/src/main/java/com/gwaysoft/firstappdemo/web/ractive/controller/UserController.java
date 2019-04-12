@@ -3,11 +3,13 @@ package com.gwaysoft.firstappdemo.web.ractive.controller;
 import com.gwaysoft.firstappdemo.web.ractive.domain.User;
 import com.gwaysoft.firstappdemo.web.ractive.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UserController {
@@ -18,6 +20,9 @@ public class UserController {
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @PostMapping ("/user/save")
     public User save(@RequestParam   String name){
@@ -32,4 +37,11 @@ public class UserController {
     public Iterable<User> findAll(){
         return userRepository.findAll();
     }
+
+
+    @PostMapping("/showJdbc")
+    public List<Map<String, Object>> showJdbc(){
+       return jdbcTemplate.queryForList("select * from user");
+    }
+
 }
